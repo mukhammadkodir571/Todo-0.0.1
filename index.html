@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Todo 0.0.1</title>
+  </head>
+  <body class="bg-slate-900">
+    <h1
+      class="text-cyan-300 text-5xl font-mono font-bold font-stretch-normal tracking-wider text-center mt-[50px]">
+      Todo List
+    </h1>
+    <form
+      class="todo__form flex items-center bg-gray-800 p-2 rounded-full w-full max-w-md mx-auto mt-10 focus-within:ring-2 focus-within:ring-teal-400"
+      id="form">
+      <input
+        type="text"
+        autofocus
+        class="todo__input flex-1 bg-transparent text-white rounded-full px-4 text-lg font-mono font-bold focus:outline-none"
+        id="input"
+        placeholder="Add a new task"
+        autocomplete="off" />
+      <button
+        type="submit"
+        class="todo__btn bg-teal-400 text-black font-bold w-[60px] py-2 rounded-full hover:bg-teal-500 transition bg-blue-500 shadow-lg shadow-blue-500/50 text-white">
+        Add
+      </button>
+      
+    </form>
+    
+    <div class="flex justify-center mt-4">
+      <b class="text-cyan-300 text-2xl font-mono font-bold"
+        >You have <span class="todo__count">0</span> todos</b
+      >
+    </div>
+    <ul
+      class="todo__list max-w-md mx-auto mt-10 flex flex-col gap-4"
+      id="list"></ul>
+
+    <template class="todo__template">
+      <li
+        class="todo__item bg-gray-800 p-3 rounded flex justify-between items-center">
+        <div class="flex justify-between">
+          <div class="flex items-center gap-2">
+            <input type="checkbox" class="todo__checkbox w-6 h-6" />
+            <p class="todo__text text-white font-mono font-bold text-2xl"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button
+            class="edit__btn bg-green-500 hover:bg-green-600 bg-green-500 shadow-lg shadow-green-500/50 text-white font-bold pl-3 pr-3 pt-1 pb-1 rounded">
+            Edit</button
+          ><button
+            class="delete__btn bg-red-500 hover:bg-red-600 bg-red-500 shadow-lg shadow-red-500/50 text-white font-bold pl-3 pr-3 pt-1 pb-1 rounded">
+            Delete
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
